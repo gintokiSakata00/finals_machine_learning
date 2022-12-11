@@ -1,0 +1,55 @@
+C++ | Java – Quiz
+1. Who develop the programming language C++ ?
+a. Bjorne Stroustrup
+b. Boyern Stroustrup
+c. Byarne Stroustrup
+d. Bjarne Stroustrup
+
+2. When was C++ develop?
+a. 1979
+b. 1978
+c. 1976
+d. 1980
+3. C++ is regarded as middle-level language, as it is comprises a combination of ____ 
+language features.
+a. only high
+b. high level
+c. low level
+d. both b and c
+4. C++ is a ____ programming language it is closely associated with the human-comprehensible
+English language.
+a. standard level
+b. high level
+c. normal level
+d. super high level
+5. _____ is one of the features of C++ where Developers have access to lots of in-built functions
+provided by C++ language. This saves time & makes development fast.
+A. Existence of Community
+B. Existence of Package
+C. Existence of Libraries
+D. NONE of Above
+6. Java is a programming language and computing platform first released by Sun Microsystems in
+__.
+a. 1800
+b. 1900
+c. 1895
+d. 1995
+7. Java is reliable because of its ___ detection and handling.
+a. Error  c. Data
+b. System d. Runtime
+8. Java uses both _______ as well as __________ while other programming languages use only
+one.
+a. Error, Bug
+b. Assembly, Machine Language
+c. Compiler, Interpreter
+d. Interpreter, Translator
+9. Java is ______ or extensible since we can add classes and add new methods to classes and even
+creating new classes through subclasses.
+a. Static c. Popular
+b. Dynamic d. Simple
+10. It is a programming language and computing platform designed by James Gosling and was
+first released by Sun Microsystems.
+a. C++
+b. C#
+c. Java
+d. Python
