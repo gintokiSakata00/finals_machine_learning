@@ -7,12 +7,15 @@ img_width, img_height= 30,40
 # char_Small= [*string.ascii_lowercase]
 # char_Big= [*string.ascii_uppercase]
 # num = [*string.digits]
+
+
 def path_loc (a): #pathlocation for letters 
     if a.isdigit():
         return f"./test_numbers/{a}.jpg"
     else:
-        return f"./small/{a}.jpg" if a.islower() else f"./big/{a}.jpg"
+        return f"./test_small_characters/{a}l.jpg" if a.islower() else f"./test_big_characters/{a}.jpg"
 def main_function(char,ascii_value):
+    run_start= timer()
     char_int_classified =[]
     flat_char_img = np.empty((0, img_width* img_height))
     for x in char:
@@ -30,22 +33,24 @@ def main_function(char,ascii_value):
             char_int_classified.append(ascii_value)
             flat_img = resize_img_roi.reshape(1,img_width*img_height)
             flat_char_img = np.append(flat_char_img,flat_img,0)
-        print(f"Char :{x}\t\tCountour:{countA}\t\tChar_value : {ascii_value}")
+        run_end = timer()
+        print(f"Char :{x}\t\tCountour:{countA}\t\tChar_value : {ascii_value}\t\tTime Exec: {run_end-run_start}")
         ascii_value+=1
         countA+=1
+        
     classifications_img = np.array(char_int_classified, float) #np.float
     classifications_final_img= classifications_img.reshape(classifications_img.size,1)    
     np.savetxt("char_classifications.txt", classifications_final_img)
     np.savetxt("flat_char_img.txt",flat_char_img)
-# num = ['1','2','3','4','5','6','7','8','9']
-# char_Big = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+# num = ['1','2','4','5','6','7','8'] #okay
+# char_Big = ['B','D','E','G','H','I','J','K','M','P','Q'] #okay
+# # char_Small = ['a','c','e','h','i','j','l','o','r','s','u','v','w','x','y','z']
+# char_Small =['b','d','f','g','k','m','n','p','q','t'] #okay
+char_Big = ['Z']
+char_Small = ['w','x','y','z']
 # main_function(num,48)
-# main_function(char_Big,65)
-SMALL = ["a","b","c","d"]
-main_function(SMALL,97)
-BIG = ["A","B","C","D"]
-main_function(BIG,65)
-
+main_function(char_Big,65)
+main_function(char_Small,97)
 print("Complete!!!")
 end = timer()
 print(f"Time Execution: {end-start}")

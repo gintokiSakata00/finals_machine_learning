@@ -24,8 +24,8 @@ KNearest_var = knn_var
 knn_var.train(char_flat_images,cv2.ml.ROW_SAMPLE, classified_char)
 
 names = files_dir
-answer_key = "DADBCDACBC"
-# user_input= input(str("How many files to checked :"))
+# answer_key= input(str("What is the correct Answer: ")) #ask the user for answer keys
+answer_key = "BCDACDACDAC"
 user_input = 3
 def path_loc (a): #pathlocation for letters 
     return f"./test/{a}.jpg"
@@ -58,8 +58,8 @@ for i in names:
             else:
                 [intX, intY, intW, intH] = cv2.boundingRect(approx_cv)
                 cv2.rectangle(test_paper, (intX , intY), (intX+intW, intY+intH),(0,255,0),2)
-                cv2.imshow('12123',test_paper) #show how boxes were scanned in the test paper
-                cv2.waitKey(0) # wait for key press to continue
+                # cv2.imshow('12123',test_paper) #show how boxes were scanned in the test paper
+                # cv2.waitKey(0) # wait for key press to continue
                 img_to_char = theshold[intY:intY+intH, intX:intX+intW]
                 img_to_char = img_to_char[5:60,5:60]
                 invert_img = cv2.bitwise_not(img_to_char)
@@ -90,7 +90,6 @@ for i in names:
     output = f"Name: {i}\nScore: {scores}"
     print(output)
     print(f"{i[0:7]}\t\t{student_answer}")
-    print(f"Answer Key:\t{answer_key}")
     print()
     con_output +=output+"\n"
     con_output +="\n"
