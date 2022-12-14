@@ -25,7 +25,7 @@ knn_var.train(char_flat_images,cv2.ml.ROW_SAMPLE, classified_char)
 
 names = files_dir
 # answer_key= input(str("What is the correct Answer: ")) #ask the user for answer keys
-answer_key = "BCDACDACDAC"
+answer_key = "DADBCDACBC"
 user_input = 3
 def path_loc (a): #pathlocation for letters 
     return f"./test/{a}.jpg"
@@ -89,7 +89,6 @@ for i in names:
     cv2.imwrite(f'./check_test_paper/{i}_checked.jpg', image)
     output = f"Name: {i}\nScore: {scores}"
     print(output)
-    print(f"{i[0:7]}\t\t{student_answer}")
     print()
     con_output +=output+"\n"
     con_output +="\n"

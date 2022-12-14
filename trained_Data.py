@@ -4,10 +4,9 @@ import cv2
 import numpy as np 
 start = timer() #timer starts
 img_width, img_height= 30,40
-# char_Small= [*string.ascii_lowercase]
-# char_Big= [*string.ascii_uppercase]
-# num = [*string.digits]
-
+char_Small= [*string.ascii_lowercase]
+char_Big= [*string.ascii_uppercase]
+num = [*string.digits]
 
 def path_loc (a): #pathlocation for letters 
     if a.isdigit():
@@ -34,21 +33,18 @@ def main_function(char,ascii_value):
             flat_img = resize_img_roi.reshape(1,img_width*img_height)
             flat_char_img = np.append(flat_char_img,flat_img,0)
         run_end = timer()
-        print(f"Char :{x}\t\tCountour:{countA}\t\tChar_value : {ascii_value}\t\tTime Exec: {run_end-run_start}")
+        runtime = run_end-run_start
+        print(f"Char :{x}\t\tCountour:{countA}", end='')
+        print(f"\t\tChar_value : {ascii_value}\t\tTime Exec: {int(runtime)}")
         ascii_value+=1
         countA+=1
-        
+    
     classifications_img = np.array(char_int_classified, float) #np.float
     classifications_final_img= classifications_img.reshape(classifications_img.size,1)    
     np.savetxt("char_classifications.txt", classifications_final_img)
     np.savetxt("flat_char_img.txt",flat_char_img)
-# num = ['1','2','4','5','6','7','8'] #okay
-# char_Big = ['B','D','E','G','H','I','J','K','M','P','Q'] #okay
-# # char_Small = ['a','c','e','h','i','j','l','o','r','s','u','v','w','x','y','z']
-# char_Small =['b','d','f','g','k','m','n','p','q','t'] #okay
-char_Big = ['Z']
-char_Small = ['w','x','y','z']
-# main_function(num,48)
+
+main_function(num,48)
 main_function(char_Big,65)
 main_function(char_Small,97)
 print("Complete!!!")
